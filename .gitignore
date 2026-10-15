@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.mf4
+*.mdf
+*.dat
+*.joblib
+*.pkl
+*.exe
+*_Edited/
+*.csv
+.DS_Store
