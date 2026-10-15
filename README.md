@@ -94,10 +94,6 @@ The scripts open desktop folder-selection dialogs and may require Windows/networ
 
 See [`presentations/`](presentations/) for the supplied final presentation, introductory ML talk and engineering user guides. See [`docs/ML_FAULT_CLEANING_REPORT.txt`](docs/ML_FAULT_CLEANING_REPORT.txt) for the ML fault-cleaning project report.
 
-## CV summary
-
-**Machine Learning & Data Analytics — Volvo Cars (Summer 2026)** — Developed automotive signal-quality and ML workflows for MDF/MF4 measurements, including Random Forest fault detection and classification, rule-based signal repair, and XGBoost-based peak torque event prediction. Built Python batch-processing utilities, engineering visualizations, validation logs and documented workflows.
-
 ## Publication and attribution
 
 This repository is a personal portfolio, not an official Volvo Cars repository. Publication permission is reported by the author. Only files supplied in this conversation are included. The `.gitignore` excludes raw measurements and model binaries by default to prevent accidental addition of unrelated data.
