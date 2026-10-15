@@ -1,0 +1,213 @@
+ROAD LOAD ML TORQUE FAULT DETECTION & CLEANING PROJECT, Mulubrhan Nerea
+
+
+============================================================
+PROJECT OBJECTIVE
+============================================================
+
+Develop an end-to-end Machine Learning solution to automatically detect, classify, localize and clean torque signal faults in Road Load vehicle measurement data.
+
+The solution supports:
+• AWD vehicles
+• FWD vehicles
+• RWD vehicles
+
+============================================================
+DEVELOPMENT PHASE
+============================================================
+
+STEP 01 – ML DATASET CREATION
+
+• Built a labeled ML dataset from manually identified torque faults.
+• Extracted signal and statistical features from:
+  - TQ_FL
+  - TQ_FR
+  - TQ_RL
+  - TQ_RR
+
+Output:
+• torque_ml_features_all_files_labeled
+
+------------------------------------------------------------
+
+STEP 02 – BINARY FAULT DETECTION MODEL
+
+Objective:
+• Classify windows as Fault or Normal.
+
+Output:
+• torque_fault_binary_detector_by_file.joblib
+
+------------------------------------------------------------
+
+STEP 02B – FAULT TYPE CLASSIFICATION MODEL
+
+Objective:
+• Classify detected faults into:
+  - Step Plateau
+  - Spike
+  - Short-Thin
+  - Front Fault
+  - Rear Fault
+
+Output:
+• torque_fault_type_models.joblib
+
+============================================================
+FAULT TYPE MODEL PERFORMANCE
+============================================================
+
+Step Plateau
+• Precision: 100.0%
+• Recall: 95.6%
+• F1 Score: 97.8%
+
+Spike
+• Precision: 69.5%
+• Recall: 100.0%
+• F1 Score: 82.0%
+
+Short-Thin
+• Precision: 94.6%
+• Recall: 61.9%
+• F1 Score: 74.9%
+
+Front Fault Classification
+• Precision: 99.6%
+• Recall: 99.8%
+• F1 Score: 99.7%
+
+Rear Fault Classification
+• Precision: 100.0%
+• Recall: 99.2%
+• F1 Score: 99.6%
+
+============================================================
+FINAL PRODUCTION PIPELINE
+============================================================
+
+Final script:
+
+ML_CLEANING_PIPELINE_ML_OUTPUT.py
+
+Standalone application:
+
+TorqueCleaner.exe
+
+The final pipeline integrates all processing steps into a single workflow.
+
+------------------------------------------------------------
+
+STEP 03 – BINARY ML SCREENING
+
+• Loads measurement files.
+• Generates analysis windows.
+• Extracts ML features.
+• Predicts fault probability.
+
+------------------------------------------------------------
+
+STEP 03B – FAULT TYPE CLASSIFICATION
+
+• Applies trained fault-type ML models.
+• Predicts:
+  - Step Plateau
+  - Spike
+  - Short-Thin
+  - Front Fault
+  - Rear Fault
+
+------------------------------------------------------------
+
+STEP 04 – INTERVAL MERGING
+
+• Combines overlapping ML detections.
+• Produces continuous fault intervals.
+
+------------------------------------------------------------
+
+STEP 05 – EXACT FAULT LOCALIZATION
+
+• Determines:
+  - Exact start time
+  - Exact end time
+  - Faulty wheel
+  - Fault type
+
+------------------------------------------------------------
+
+STEP 06 – AUTOMATED CLEANING
+
+• Applies interpolation only within verified fault regions.
+
+Faults handled:
+• Step Plateau
+• Spike
+• Short-Thin
+
+Engineering improvements implemented:
+• AWD support
+• FWD support
+• RWD support
+• Reduced false positives
+• Improved Step Plateau validation
+• Improved Short-Thin validation
+• Preserved original channel names
+
+------------------------------------------------------------
+
+STEP 07 – VALIDATION REPORTING
+
+Automatically generates:
+• Before Cleaning plots
+• After Cleaning plots
+• Full signal comparison plots
+• Cleaning logs
+
+------------------------------------------------------------
+
+STEP 08 – CLEANED MF4 EXPORT
+
+Outputs:
+• Cleaned MF4 files
+• Validation plots
+• Cleaning log
+
+Preserves:
+• Original signals
+• Original timestamps
+• Original non-torque channels
+
+============================================================
+FINAL DELIVERABLES
+============================================================
+
+• Binary Fault Detection Model
+• Fault Type Classification Models
+• Automatic Fault Localization
+• Automatic Torque Signal Cleaning
+• Validation Plot Generation
+• Cleaning Logs
+• Cleaned MF4 Export
+• ML_CLEANING_PIPELINE_ML_OUTPUT.py
+• TorqueCleaner.exe
+
+============================================================
+PROJECT OUTCOME
+============================================================
+
+Successfully developed and deployed a Machine Learning based torque fault detection and cleaning solution for Road Load measurement data.
+
+The final solution:
+• Automatically screens measurement files
+• Detects torque signal faults
+• Classifies fault type
+• Localizes fault regions
+• Cleans detected faults
+• Generates engineering validation plots
+• Exports cleaned MF4 files
+• Supports AWD, FWD and RWD vehicles
+• Runs as a standalone TorqueCleaner.exe application
+
+Result:
+Significant reduction in manual signal review effort while maintaining engineering traceability through validation plots, cleaning logs and cleaned MF4 deliverables.
